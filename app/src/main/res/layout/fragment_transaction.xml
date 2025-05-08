@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/ic_launcher_background"
     tools:context=".ui.transactions.TransactionsFragment">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:text="TOTAL TRANSACTIONS"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

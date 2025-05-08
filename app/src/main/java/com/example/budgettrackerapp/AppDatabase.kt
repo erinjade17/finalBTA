@@ -12,7 +12,7 @@ import com.example.budgettrackerapp.data.model.Transaction
 import com.example.budgettrackerapp.data.model.TransactionTypeConverter
 
 @Database(
-    entities = [User::class, Category::class, Expense::class, BudgetGoal::class, Transaction::class],
+    entities = [User::class, Category::class, Expense::class, BudgetGoal::class, Transaction::class, Income::class], // Added Income::class
     version = 1,
     exportSchema = false
 )
@@ -23,12 +23,13 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun expenseDao(): ExpenseDao
     abstract fun budgetGoalDao(): BudgetGoalDao
     abstract fun transactionDao(): TransactionDao
+    abstract fun incomeDao(): IncomeDao // Added incomeDao()
 
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getInstance(context: Context): AppDatabase { // Changed to getInstance
+        fun getInstance(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
